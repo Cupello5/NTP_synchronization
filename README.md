@@ -111,11 +111,6 @@ remote           refid          st t  when poll reach  delay   offset  jitter
 *192.168.1.10     ...           2 u   50   64   377    0.612   -0.325   0.008
 ```
 
-Dalla Raspberry (client) puoi lanciare via SSH:
-```bash
-ssh utente_del_master@ip_master 'date +"%s.%N"'
-date +"%s.%N"
-```
 
 ## 🔒 Note importanti
 
