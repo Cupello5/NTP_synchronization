@@ -105,10 +105,11 @@ ntpq -p
 ```
 Dovresti vedere una riga simile a questa con iP del master dove hai installato NTP:
 
-remote           refid      st t when poll reach   delay   offset  jitter
+```bash
+remote           refid          st t  when poll reach  delay   offset  jitter 
 ==============================================================================
-*192.168.1.10   ...       2 u   50   64  377    0.612   -0.325   0.008
-
+*192.168.1.10     ...           2 u   50   64   377    0.612   -0.325   0.008
+```
 
 
 ## 🔒 Note importanti
