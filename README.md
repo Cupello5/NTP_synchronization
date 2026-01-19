@@ -13,7 +13,7 @@ Guida passo passo per configurare un PC Ubuntu come server NTP (master) e una Ra
 
 ```bash
 sudo apt update
-sudo apt install ntp
+sudo apt install ntpsec
 ```
 
 ## 1.2 Configurazione del server
@@ -69,7 +69,7 @@ In caso invece che siano stati utilizzati pool dovresti vedere un elenco di serv
 
 ```bash
 sudo apt update
-sudo apt install ntp
+sudo apt install ntpsec
 ```
 
 ## 2.2 Configurazione del client
