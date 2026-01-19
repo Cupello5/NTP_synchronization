@@ -50,7 +50,7 @@ hostname -I
 ```
 Annota l’indirizzo IP mostrato, ad esempio 192.168.1.10.
 
-Se si utilizza avahi si può utilizzare direttamente <mastername>.local
+Se si utilizza avahi si può utilizzare direttamente `<mastername>.local`
 
 
 ## 🍓 2. CONFIGURAZIONE DELLA RASPBERRY PI COME CLIENT NTP
@@ -96,7 +96,7 @@ sudo systemctl restart ntp
 ```bash
 ntpq -p
 ```
-Dovresti vedere una riga simile a questa con iP del master dove hai installato NTP:
+Dovresti vedere una riga simile a questa con iP del MASTER dove hai installato NTP:
 
 ```bash
 remote           refid          st t  when poll reach  delay   offset  jitter 
@@ -113,13 +113,15 @@ Firewall: Assicurarsi che sul master Ubuntu sia aperta la porta UDP 123 se è ab
 sudo ufw allow 123/udp
 ```
 
-Forzare sincronizzazione manuale (sul client Raspberry, opzionale):
+Forzare sincronizzazione manuale (sul client Raspberry (client), opzionale):
 
 ```bash
+sudo systemctl stop ntpsec
 sudo ntpd -gq
+sudo systemctl start ntpsec
 ```
 
-Verifica sempre con:
+Verifica sempre su Raspberry (client) con:
 
 ```bash
 ntpq -p
