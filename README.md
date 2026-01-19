@@ -44,22 +44,13 @@ Salva e chiudi il file.
 sudo systemctl restart ntp
 ```
 
-## 1.4 Trova l’IP del server Ubuntu
-
+## 1.4 Trova l’IP del server Ubuntu 
 ```bash
 hostname -I
 ```
 Annota l’indirizzo IP mostrato, ad esempio 192.168.1.10.
 
-## 1.5 Verifica lo stato di NTP
-
-```bash
-ntpq -p
-```
-
-Se non viene messo nemmeno un pool nella configurazione otterrai: `No association ID's returned` questo succede quando il demone ntpd non ha nessun server/peer configurato a cui associarsi per prendere il tempo e usa il sul suo hardware clock in questo caso.
-
-In caso invece che siano stati utilizzati pool dovresti vedere un elenco di server/pool.
+Se si utilizza avahi si può utilizzare direttamente <mastername>.local
 
 
 ## 🍓 2. CONFIGURAZIONE DELLA RASPBERRY PI COME CLIENT NTP
@@ -89,6 +80,8 @@ Aggiungi:
 `server 192.168.1.10 iburst`
 
 Sostituisci 192.168.1.10 con l’IP effettivo ottenuto dal comando hostname -I sul pc master (Ubuntu)
+
+Se hai avahi `server <mastername>.local iburst` 
 
 Salva e chiudi il file.
 
