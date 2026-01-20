@@ -126,3 +126,39 @@ Verifica sempre su Raspberry (client) con:
 ```bash
 ntpq -p
 ```
+
+## 🪟 3. CONFIGURAZIONE DI UN PC WINDOWS COME CLIENT NTP
+
+> ⚠️ Tutti i comandi devono essere eseguiti **come amministratore** in PowerShell.
+
+### 3.1 Avviare e impostare il servizio Windows Time
+```bash
+net start w32time
+sc.exe config w32time start= auto
+```
+
+### 3.2 Verifica stato
+```bash
+w32tm /query /status
+```
+
+### 3.3 Configurare il server NTP
+
+Sostituisci `<masterPCname>.local` con il nome del server Ubuntu (o il suo IP):
+
+```bash
+w32tm /config /manualpeerlist:"<masterPCname>.local" /syncfromflags:manual /reliable:no /update
+Restart-Service w32time
+```
+### 3.4 Forzare la sincronizzazione immediata
+
+```bash
+w32tm /resync
+```
+
+### 3.5 Verificare la sincronizzazione
+```bash
+w32tm /query /status
+w32tm /query /peers
+```
+
