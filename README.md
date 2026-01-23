@@ -1,8 +1,8 @@
 # NTP_synchronization
 
-# Sincronizzazione Oraria NTP tra Ubuntu (Master) e Raspberry Pi (Client) su Newtwork locale 
+# Sincronizzazione Oraria NTP tra Ubuntu (Master) e Raspberry Pi (Client) o PC Windows (Client) su Newtwork locale 
 
-Guida passo passo per configurare un PC Ubuntu come server NTP (master) e una Raspberry Pi come client NTP sulla stessa rete locale, senza (o con) necessità che i client vadano su Internet.
+Guida passo passo per configurare un PC Ubuntu come server NTP (master) e una Raspberry Pi o PC Windows come client NTP sulla stessa rete locale, senza (o con) necessità che i client vadano su Internet.
 
 ---
 
